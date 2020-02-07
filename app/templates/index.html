@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+<style>
+body {
+padding-top: 1em;
+}
+</style>
+
+{% block content %}
+    <div class="container align-content-xl-center">
+        <div class="form-group row">
+        <div class="input-group input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Source URL:</span>
+              </div>
+
+            {% block app_content %}
+            <form method="POST" action="/" class="col-md-10">
+                {{ form.csrf_token }}
+                {{ form.source(size=30) }}
+                <input type="submit" class="btn btn-primary" value="Run">
+            </form>
+            <div class="row">
+            <b>Я</b>
+
+            <p><b>верстаю</b></p>
+            <p><h5><i>как</i></h5></p>
+            <div class="col-lg-1"><code>мудак</code></div>
+            </div>
+            {% if shorten %}
+                <p>{{ base_url }}{{ shorten }}</p>
+            {% endif %}
+            {% endblock %}
+        </div>
+        </div>
+    </div>
+{% endblock %}
+
+<!-- <input type="submit" class="btn-sm btn-primary col-sm-1" value="Run"> -->

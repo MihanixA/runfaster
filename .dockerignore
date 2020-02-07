@@ -1,0 +1,12 @@
+.dockerignore
+.docker
+Dockerfile
+docker-compose.yml
+.venv
+.DS_Store
+**/__pycache__
+**/*.py[cod]
+.git
+.gitignore
+.idea
+**/*.swp
